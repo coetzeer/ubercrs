@@ -1,0 +1,24 @@
+{
+  "author": "",
+  "checksums": {
+    "Rakefile": "f37e6131fe7de9a49b09d31596f5fbf1",
+    "manifests/site.pp": "0e3ddbadb98d21f186697bcc58e5f073",
+    "Vagrantfile": "9a768e5d1e124a7dded7106758f0ad7c",
+    "provision.sh": "001d14feb617463600ca317a0866ae0e",
+    "modules/baseconfig/manifests/init.pp": "c53d340baf3df8f86a07bfe1b064a5cb",
+    "Modulefile": "58b85dede31b264ffd4a05954508df34",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "tests/init.pp": "5ae99ea500d784e5fe221dfed73f5974",
+    "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+    "README.md": "b48718a5fd5931e519599b5cf92337cb"
+  },
+  "dependencies": [],
+  "description": "",
+  "license": "",
+  "name": "coetzeer-uberrcs",
+  "project_page": "",
+  "source": "",
+  "summary": "",
+  "types": [],
+  "version": "0.1.0"
+}

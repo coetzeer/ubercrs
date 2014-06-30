@@ -12,7 +12,7 @@ node 'gitolite' {
 
 node 'gitlab' {
 
-
+ 
 }
 
 node 'gitorious' {

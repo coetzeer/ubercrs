@@ -19,15 +19,39 @@ function add_host {
 	fi
 }
 
-yum install git
-git clone git://gitorious.org/gitorious/ce-installer.git
- 
+function init_modules {
+	rm -fr /etc/puppet/modules
+	git clone /vagrant/shared_modules/.git /etc/puppet/modules
+	#git clone coetzeer@192.168.2.1:~/git/shared_modules/.git
+}
+
+function commit_back_to_repo {
+	cd /etc/puppet/modules
+	GIT_STATUS=`git status | grep "nothing to commit" | wc -l`
+	if [ $GIT_STATUS -eq 0 ];
+	then
+		git add *
+		git commit -m "updating modules"
+		git push
+	fi
+}
+
+init_modules
 install_module mysql puppetlabs-mysql
 install_module apache puppetlabs-apache
 install_module puppetdb puppetlabs-puppetdb
 install_module dashboard puppetlabs-dashboard
 install_module gerrit roidelapluie-gerrit
 install_module reviewboard saw-reviewboard
+install_module gitlab sbadia-gitlab
+install_module wls biemond-wls
+install_module oradb biemond-oradb
+install_module phppgadmin knowshan-phppgadmin
+install_module timezone bashtoni-timezone
+install_module ntp puppetlabs-ntp
+install_module mercurial jgoettsch-mercurial
+install_module sudo saz-sudo
+commit_back_to_repo
 
 add_host gitolite 192.168.2.28
 add_host gitlab 192.168.2.22

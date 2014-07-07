@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
 	      node_config.vm.hostname = node[:hostname] + '.' + domain
 	      config.vm.network "private_network", ip: node[:ip]
 		  #config.vm.network :forwarded_port, guest: 22, host: node[:ssh_port]
-		  config.ssh.guest_port = node[:ssh_port]
+		  #config.ssh.guest_port = node[:ssh_port]
 		  
 	      memory = node[:ram] ? node[:ram] : 256;
 	     
@@ -53,10 +53,11 @@ Vagrant.configure("2") do |config|
 	    	puppet.module_path = 'modules'
 	    	#puppet.hiera_config_path = "hiera.yaml"
 	    	puppet.working_directory = "/vagrant"
-	    	puppet.options = " --debug --verbose --storeconfigs --dbadapter = mysql --dbuser = puppet --dbpassword = password --dbserver = localhost"
+	    	puppet.options = " --debug"
+	    	#--verbose --storeconfigs --dbadapter=mysql --dbuser=puppet --dbpassword=password --dbserver=localhost
 	    end
 
-      
+     
     end #end node_config
     
   end # end node loop

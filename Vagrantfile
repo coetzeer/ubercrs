@@ -13,9 +13,11 @@ nodes = [
   { :hostname => 'gitorious',    		:ip => '192.168.2.23', :box => box, :ram => 512, :ssh_port => 2223 },
   { :hostname => 'reviewboard',    		:ip => '192.168.2.24', :box => box, :ram => 512, :ssh_port => 2224 },
   { :hostname => 'cvs',     			:ip => '192.168.2.21', :box => box, :ram => 512, :ssh_port => 2221 },
-  { :hostname => 'svn',                 	:ip => '192.168.2.26', :box => box, :ram => 512, :ssh_port => 2226 },
+  { :hostname => 'svn',                 :ip => '192.168.2.26', :box => box, :ram => 512, :ssh_port => 2226 },
   { :hostname => 'hg', 			        :ip => '192.168.2.27', :box => box, :ram => 512, :ssh_port => 2227 },
   { :hostname => 'gerrit',		        :ip => '192.168.2.29', :box => box, :ram => 512, :ssh_port => 2229 },
+  { :hostname => 'bzr',		            :ip => '192.168.2.20', :box => box, :ram => 512, :ssh_port => 2220 },
+  { :hostname => 'pf',		            :ip => '192.168.2.19', :box => box, :ram => 512, :ssh_port => 2219 },
 ]
 
 Vagrant.configure("2") do |config|
